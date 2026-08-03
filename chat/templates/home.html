@@ -1,0 +1,147 @@
+{% extends "base.html" %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block content %}
+
+<div class="container py-5">
+
+    <div class="text-center">
+
+        <h1 class="display-3 fw-bold">
+            🤖 Saarthi AI
+        </h1>
+
+        <p class="lead text-muted mt-3">
+            Ask questions, learn faster, and chat with AI powered by Google Gemini.
+        </p>
+
+        <div class="mt-4">
+
+            <a href="{% url 'signup' %}" class="btn btn-primary btn-lg me-3">
+                Get Started
+            </a>
+
+            <a href="{% url 'login' %}" class="btn btn-outline-dark btn-lg">
+                Login
+            </a>
+
+        </div>
+
+    </div>
+
+    <hr class="my-5">
+
+    <div class="row text-center">
+
+        <div class="col-md-3 mb-4">
+
+            <div class="card shadow-sm h-100">
+
+                <div class="card-body">
+
+                    <h2>💬</h2>
+
+                    <h5 class="card-title">
+                        AI Chat
+                    </h5>
+
+                    <p class="card-text">
+                        Chat with Gemini AI and get instant answers.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-3 mb-4">
+
+            <div class="card shadow-sm h-100">
+
+                <div class="card-body">
+
+                    <h2>📚</h2>
+
+                    <h5 class="card-title">
+                        Conversation History
+                    </h5>
+
+                    <p class="card-text">
+                        Continue your previous conversations anytime.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-3 mb-4">
+
+            <div class="card shadow-sm h-100">
+
+                <div class="card-body">
+
+                    <h2>🔒</h2>
+
+                    <h5 class="card-title">
+                        Secure Login
+                    </h5>
+
+                    <p class="card-text">
+                        Your conversations stay linked to your account.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-3 mb-4">
+
+            <div class="card shadow-sm h-100">
+
+                <div class="card-body">
+
+                    <h2>⚡</h2>
+
+                    <h5 class="card-title">
+                        Fast Responses
+                    </h5>
+
+                    <p class="card-text">
+                        Powered by Google's Gemini API for quick answers.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="text-center mt-5">
+
+        <h2 class="fw-bold">
+            Ready to start chatting?
+        </h2>
+
+        <p class="text-muted">
+            Create your account and start your first AI conversation.
+        </p>
+
+        <a href="{% url 'signup' %}" class="btn btn-success btn-lg">
+            Create Free Account
+        </a>
+
+    </div>
+
+</div>
+
+{% endblock %}

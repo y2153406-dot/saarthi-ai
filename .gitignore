@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual Environment
+vrenv/
+venv/
+.env
+
+# Database
+db.sqlite3
+
+# Static Files
+staticfiles/
+
+# macOS
+.DS_Store
+
+# VS Code
+.vscode/
+
+# Logs
+*.log
+
+# Pytest
+.pytest_cache/
+
+# Migrations Cache
+*.pyc
