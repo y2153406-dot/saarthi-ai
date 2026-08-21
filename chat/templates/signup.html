@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load socialaccount %}
 
 {% block title %}
 Sign Up
@@ -21,15 +22,11 @@ Sign Up
                     </h2>
 
                     {% if messages %}
-
                         {% for message in messages %}
-
                             <div class="alert alert-danger">
                                 {{ message }}
                             </div>
-
                         {% endfor %}
-
                     {% endif %}
 
                     <form method="POST">
@@ -37,7 +34,6 @@ Sign Up
                         {% csrf_token %}
 
                         <div class="mb-3">
-
                             <label for="username" class="form-label">
                                 Username
                             </label>
@@ -50,11 +46,9 @@ Sign Up
                                 placeholder="Enter your username"
                                 value="{{ username }}"
                             >
-
                         </div>
 
                         <div class="mb-3">
-
                             <label for="email" class="form-label">
                                 Email
                             </label>
@@ -67,11 +61,9 @@ Sign Up
                                 placeholder="Enter your email"
                                 value="{{ email }}"
                             >
-
                         </div>
 
                         <div class="mb-3">
-
                             <label for="password" class="form-label">
                                 Password
                             </label>
@@ -83,11 +75,9 @@ Sign Up
                                 name="password"
                                 placeholder="Enter your password"
                             >
-
                         </div>
 
                         <div class="mb-4">
-
                             <label for="confirm_password" class="form-label">
                                 Confirm Password
                             </label>
@@ -99,32 +89,41 @@ Sign Up
                                 name="confirm_password"
                                 placeholder="Confirm your password"
                             >
-
                         </div>
 
                         <div class="d-grid">
-
                             <button
                                 type="submit"
                                 class="btn btn-primary"
                             >
                                 Sign Up
                             </button>
-
                         </div>
 
                     </form>
 
+                    <!-- Google OAuth -->
+                    <div class="text-center my-3">
+                        <span class="text-muted">OR</span>
+                    </div>
+
+                    <div class="d-grid">
+                        <a
+                            href="{% provider_login_url 'google' %}"
+                            class="btn btn-outline-danger"
+                        >
+                            Continue with Google
+                        </a>
+                    </div>
+
                     <hr>
 
                     <p class="text-center mb-0">
-
                         Already have an account?
 
                         <a href="{% url 'login' %}">
                             Login
                         </a>
-
                     </p>
 
                 </div>

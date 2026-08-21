@@ -37,6 +37,14 @@ ALLOWED_HOSTS = [
     ".onrender.com",
 ]
 
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+]
+
+SITE_ID = 1
+SOCIALACCOUNT_LOGIN_ON_GET = True
+
 
 # Application definition
 
@@ -47,6 +55,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # Allauth
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.google',
     'chat'
 ]
 
@@ -57,6 +70,7 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'allauth.account.middleware.AccountMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
@@ -128,6 +142,8 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATIC_URL = "static/"
+LOGIN_REDIRECT_URL = "/chat/"
+ACCOUNT_LOGIN_REDIRECT_URL = "/chat/"
 
 STATIC_ROOT = BASE_DIR / "staticfiles"
 

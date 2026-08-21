@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load socialaccount %}
 
 {% block title %}
 Login
@@ -81,6 +82,19 @@ Login
                         </div>
 
                     </form>
+
+                    <div class="text-center my-3">
+                        <span class="text-muted">OR</span>
+                    </div>
+
+                    <div class="d-grid">
+                        <a
+                            href="{% provider_login_url 'google' %}"
+                            class="btn btn-outline-danger"
+                        >
+                            Continue with Google
+                        </a>
+                    </div>
 
                     <hr>
 
