@@ -43,7 +43,18 @@ AUTHENTICATION_BACKENDS = [
 ]
 
 SITE_ID = 1
+SOCIALACCOUNT_PROVIDERS = {
+    "google": {
+        "SCOPE": [
+            "profile",
+            "email",
+        ],
+    }
+}
+
 SOCIALACCOUNT_LOGIN_ON_GET = True
+
+LOGIN_REDIRECT_URL = "/chat/"
 
 
 # Application definition
@@ -142,7 +153,6 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATIC_URL = "static/"
-LOGIN_REDIRECT_URL = "/chat/"
 ACCOUNT_LOGIN_REDIRECT_URL = "/chat/"
 
 STATIC_ROOT = BASE_DIR / "staticfiles"
